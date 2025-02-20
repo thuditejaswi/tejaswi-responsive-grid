@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: #373B44;  
+background: -webkit-linear-gradient(to right, #4286f4, #373B44); 
+background: linear-gradient(to right, #4286f4, #373B44);
+color: white;
+
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            overflow: scroll;
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: 200px 100px 300px 200px 100px 100px 200px;
+            grid-template-rows: 200px 200px 200px;
+            /* background-color: rgb(228, 236, 228) ; */
+            margin: 20px;
+        }
+
+        .box {
+            color: white;
+            margin: 5px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .b1 {
+            grid-area: 1/1/2/3;
+            background: #56CCF2;
+            background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+            background: linear-gradient(to right, #2F80ED, #56CCF2);/ display: flex;
+            flex-direction: column;
+            box-shadow: -2px 2px 2px rgb(83, 168, 201);
+
+        }
+
+        .b2 {
+            grid-area: 1/3/2/6;
+            background: #e65c00;  
+background: -webkit-linear-gradient(to right, #F9D423, #e65c00); 
+background: linear-gradient(to right, #F9D423, #e65c00);
+box-shadow: 2px 2px 2px orangered;
+        }
+
+        .b3 {
+            grid-area: 1/6/2/8;
+            background: #56CCF2;
+            background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+            background: linear-gradient(to right, #2F80ED, #56CCF2);
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 2px rgb(49, 134, 195);
+        }
+
+        .b4 {
+            grid-area: 2/1/3/4;
+            background: #FF512F;  
+background: -webkit-linear-gradient(to right, #F09819, #FF512F); 
+background: linear-gradient(to right, #F09819, #FF512F); 
+box-shadow: 2px 2px 2px orangered;
+        }
+
+        .b5 {
+            grid-area: 2/4/3/8;
+            background: #36D1DC;  
+background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  
+background: linear-gradient(to right, #5B86E5, #36D1DC); 
+box-shadow: 2px 2px 2px rgb(16, 158, 235);
+        }
+
+        .b6 {
+            grid-area: 3/1/4/2;
+            background: #000046; 
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  
+background: linear-gradient(to right, #1CB5E0, #000046); /
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 2px rgb(45, 1, 133);
+        }
+
+        .b7 {
+            grid-area: 3/2/4/5;
+            background: #b92b27;  
+background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  
+background: linear-gradient(to right, #1565C0, #b92b27); 
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 2px rgb(60, 47, 97);
+        }
+
+        .b8 {
+            grid-area: 3/5/4/7;
+            background: #C33764;  
+background: -webkit-linear-gradient(to right, #1D2671, #C33764);  
+background: linear-gradient(to right, #1D2671, #C33764);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 2px rgb(95, 11, 74);
+        }
+
+        .b9 {
+            grid-area: 3/7/4/8;
+            background: #C33764; 
+background: -webkit-linear-gradient(to right, #1D2671, #C33764); 
+background: linear-gradient(to right, #1D2671, #C33764); 
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 2px rgb(95, 11, 74);
+        }
+        
+
+        .b22 {
+            width: 100%;
+            height: 60%;
+            font-size: 15px;
+
+        }
+
+        .b21 {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .left {
+            width: 40%;
+            height: 100%;
+        }
+        
+        i {
+            font-size: 35px;
+            cursor: pointer;
+            margin: 12px;
+        }
+            .sub {
+            width: 75px;
+            
+            background-color: white;
+            color: orange;
+            padding: 5px;
+        }
+        .sub2{
+            width: 75px;
+            
+            background-color: white;
+            color: rgb(20, 124, 184);
+            padding: 5px;
+        }
+        .facts{
+            padding: 10px;
+            font-size: large;
+        }
+        @media(max-width:800px){
+            .boxes{
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows:  200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .b1{
+                grid-area: 1/1/2/2;
+                flex-direction: column;
+            }
+            .b2{
+                grid-area: 1/2/2/3;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b3{
+                grid-area: 1/3/2/4;
+                flex-direction: column;
+            }
+            .b4{
+                grid-area: 2/1/3/2;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b5{
+                grid-area: 2/2/3/3;
+                padding-left: 10px;
+                padding-top: 10px;
+                
+            }
+            .b6{
+                grid-area: 2/3/3/4;
+                flex-direction: column;
+            }
+            .b7{
+                grid-area: 3/1/4/2;
+                flex-direction: column;
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 4px;
+            }
+            .Interesting{
+                font-size: 25px;
+            }
+            .b8{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .b9{
+                grid-area: 3/3/4/4;
+                flex-direction: column;
+    
+            }
+            .left {
+            width: 100%;
+            height: 50%;
+            margin-left: 150px;
+        }
+        .right{
+            width:100% ;
+            height: 50%;
+            font-size: 13px;
+        }
+        }
+        @media(max-width:800px){
+            .boxes{
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows:  200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .b1{
+                grid-area: 1/1/2/2;
+                flex-direction: column;
+            }
+            .b2{
+                grid-area: 1/2/2/3;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b3{
+                grid-area: 1/3/2/4;
+                flex-direction: column;
+            }
+            .b4{
+                grid-area: 2/1/3/2;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b5{
+                grid-area: 2/2/3/3;
+                padding-left: 10px;
+                padding-top: 10px;
+                
+            }
+            .b6{
+                grid-area: 2/3/3/4;
+                flex-direction: column;
+            }
+            .b7{
+                grid-area: 3/1/4/2;
+                flex-direction: column;
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 4px;
+            }
+            .Interesting{
+                font-size: 25px;
+            }
+            .b8{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .b9{
+                grid-area: 3/3/4/4;
+                flex-direction: column;
+    
+            }
+            .left {
+            width: 100%;
+            height: 50%;
+            margin-left: 150px;
+        }
+        .right{
+            width:100% ;
+            height: 50%;
+            font-size: 13px;
+        }
+        }
+        @media(max-width:800px){
+            .boxes{
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows:  200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .b1{
+                grid-area: 1/1/2/2;
+                flex-direction: column;
+            }
+            .b2{
+                grid-area: 1/2/2/3;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b3{
+                grid-area: 1/3/2/4;
+                flex-direction: column;
+            }
+            .b4{
+                grid-area: 2/1/3/2;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b5{
+                grid-area: 2/2/3/3;
+                padding-left: 10px;
+                padding-top: 10px;
+                
+            }
+            .b6{
+                grid-area: 2/3/3/4;
+                flex-direction: column;
+            }
+            .b7{
+                grid-area: 3/1/4/2;
+                flex-direction: column;
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 4px;
+            }
+            .Interesting{
+                font-size: 25px;
+            }
+            .b8{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .b9{
+                grid-area: 3/3/4/4;
+                flex-direction: column;
+    
+            }
+            .left {
+            width: 100%;
+            height: 50%;
+            margin-left: 150px;
+        }
+        .right{
+            width:100% ;
+            height: 50%;
+            font-size: 13px;
+        }
+        }
+        @media(max-width:600px){
+            .boxes{
+                grid-template-columns: 200px 200px;
+                grid-template-rows:  200px 200px 200px 200px;
+            }
+            .box{
+                flex-direction: column-reverse;
+            }
+            .b1{
+                grid-area: 1/1/2/2;
+                flex-direction: column;
+            }
+            .b2{
+                grid-area: 1/2/2/3;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b3{
+                grid-area: 2/1/3/2;
+                flex-direction: column;
+            }
+            .b4{
+                grid-area: 2/2/3/3;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            .b5{
+                grid-area: 3/1/4/2;
+                padding-left: 10px;
+                padding-top: 10px;
+                
+            }
+            .b6{
+                grid-area: 3/2/4/3;
+                flex-direction: column;
+            }
+            .b7{
+                grid-area: 4/1/5/2;
+                flex-direction: column;
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: 4px;
+            }
+            .Interesting{
+                font-size: 25px;
+            }
+            .b8{
+                grid-area: 4/2/5/3;
+                flex-direction: column;
+            }
+            .b9{
+                grid-area: 5/1/6/2;
+                flex-direction: column;
+                display: none;
+    
+            }
+            .left {
+            width: 100%;
+            height: 50%;
+            margin-left: 150px;
+        }
+        .right{
+            width:100% ;
+            height: 50%;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <h1>2025 in Numbers!</h1>
+
+        </div>
+        <div class="boxes">
+            <div class="box b1">
+                <h1 class="runs">1260</h1>
+                <p class="six">sixes</p>
+            </div>
+            <div class="box b2">
+                <div class="b21">
+                    <h1>Winners</h1>
+                    <p>Chennai Super kings</p>
+                </div>
+                <div class="b22">
+                    <img src="csk logo.png" alt="csk logo" height="100%">
+                </div>
+
+            </div>
+            <div class="box b3">
+                <h1>14</h1>
+                <p>Hundreds</p>
+            </div>
+            <div class="box b4">
+                <div class="left">
+                    <img src="virat.avif" alt="virat" height="100%" class="virat">
+                </div>
+                <div class="right">
+                    <p class="sub">Orangecap</p>
+                    <h1>Virat Kohli</h1>
+                    <p>Total runs : 741</p>
+                    <p>Strike rate : 154.7</p>
+                    <p>Matches played : 15</p>
+                </div>
+            </div>
+            <div class="box b5">
+                <div class="left">
+                    <img src="pat.avif" alt="pat" height="100%" class="pat">
+                </div>
+                <div class="right">
+                    <p class="sub2">Fair play</p>
+                    <h1>Sunrisers Hyderabad</h1>
+                    <p>Points  173</p>
+
+                </div>
+            </div>
+            <div class="box b6">
+                <i class="fa-solid fa-image"></i>
+                <p>Pics</p>
+            </div>
+            <div class="box b7">
+                <h1 class="Interesting">Interesting facts</h1>
+                <br>
+                <p class="facts">"Kolkata knight riders crwoned champions for the has crowned champions for 3rd time, having previously won in 2012,2014"</p>
+            </div>
+            <div class="box b8">
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Match Reports</p>
+            </div>
+            <div class="box b9">
+                <i class="fa-solid fa-play"></i>
+                <p>Highlights</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
